@@ -1,14 +1,14 @@
 /*
 [task_local]
-#520美妆抽奖机活动
-31 23 15-20/2 5 * jd_520mzcj.js, tag=520美妆抽奖机活动, enabled=true
+#618个护抽奖机
+10 7 * * * jd_618cj.js, tag=618个护抽奖机, enabled=true
  */
-const $ = new Env('520美妆抽奖机活动');
+const $ = new Env('618个护抽奖机');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
-$.configCode = "6ebb625682204acb9244404a23e4759d";
+$.configCode = "bcc0b70305f649a580f310d8a3efc255";
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 if ($.isNode()) {
@@ -21,7 +21,7 @@ if ($.isNode()) {
     cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 !(async () => {
-	console.log('入口下拉：https://u.jd.com/EI0kDKk')
+	console.log('入口下拉：https://prodev.m.jd.com/mall/active/3z1Vesrhx3GCCcBn2HgbFR4Jq68o/index.html')
     if (!cookiesArr[0]) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
         return;
